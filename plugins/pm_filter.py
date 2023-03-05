@@ -83,27 +83,53 @@ async def next_page(bot, query):
     if not files:
         return
     settings = await get_settings(query.message.chat.id)
+
     if settings['button']:
+
         btn = [
+
             [
+
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", 
+
+                    url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
+
                 ),
+
             ]
+
             for file in files
+
         ]
+
     else:
+
         btn = [
+
             [
+
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", callback_data=f'files#{file.file_id}'
+
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", 
+
+                    url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
+
                 ),
+
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}",
-                    callback_data=f'files_#{file.file_id}',
+
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", 
+
+                    url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
+
                 ),
+
             ]
+
             for file in files
+
         ]
 
     btn.insert(0,
@@ -686,33 +712,54 @@ async def auto_filter(client, msg, spoll=False):
         else:
             return
     else:
+
         settings = await get_settings(msg.message.chat.id)
+
         message = msg.message.reply_to_message  # msg will be callback query
+
         search, files, offset, total_results = spoll
+
     pre = 'filep' if settings['file_secure'] else 'file'
+
     if settings["button"]:
+
         btn = [
+
             [
+
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", 
+
+                    url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
+
                 ),
+
             ]
+
             for file in files
+
         ]
+
     else:
+
         btn = [
+
             [
+
                 InlineKeyboardButton(
-                    text=f"{file.file_name}",
-                    callback_data=f'{pre}#{file.file_id}',
+
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", 
+
+                    url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
+
                 ),
-                InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}",
-                    callback_data=f'{pre}#{file.file_id}',
-                ),
+
             ]
+
             for file in files
-        ]        
+
+        ] 
     btn.insert(0,
         [
             InlineKeyboardButton('😚 Pʀᴏᴩᴇʀ Rᴇǫᴜᴇsᴛ Mᴇᴛʜᴏᴅ 😚', callback_data='request')
