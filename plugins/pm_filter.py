@@ -398,10 +398,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                           reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('⛑𝗛ᴏᴡ 𝗧ᴏ 𝗗ᴏᴡɴʟᴏᴀᴅ⛑', url=H_DOWNLOAD_LINK)
+                    InlineKeyboardButton("⁉️ 𝗛ᴏᴡ 𝗧ᴏ 𝗗ᴏᴡɴʟᴏᴀᴅ ⁉️", url=f"{shorten_link}")
                 ],
                 [
-                    InlineKeyboardButton('♻️ 𝗗ᴏᴡɴʟᴏᴀᴅ 𝗟ɪɴᴋ ♻️', url=g)
+                    InlineKeyboardButton("♻️ 𝗗ᴏᴡɴʟᴏᴀᴅ 𝗟ɪɴᴋ ♻️", url=f"{H_DOWNLOAD_LINK}")
                 ]]))
                 await query.answer('Check In Private Message, I have sent files in Private Message\n\nPrivate Message la Parunga,Neenga Ketta File Send Panniten', show_alert=True)
         except UserIsBlocked:
