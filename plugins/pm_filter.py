@@ -415,7 +415,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         try:
 
-            if AUTH_CHANNEL and not await is_subscribed(client, query):
+            if AUTH_CHANNEL and await is_subscribed(client, query):
 
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
 
