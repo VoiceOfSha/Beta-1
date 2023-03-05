@@ -4,7 +4,7 @@ import re
 import ast
 import math
 from utils import get_shortlink
-from plugins.baashax import short_url
+from plugins.tamilanbotsz import short_url
 
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
