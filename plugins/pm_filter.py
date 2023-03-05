@@ -692,39 +692,74 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if settings is not None:
             buttons = [
+            buttons = [
+
                 [
-                    InlineKeyboardButton('Filter Button',
+
+                    InlineKeyboardButton('𝗙ɪʟᴛᴇʀ 𝗕ᴜᴛᴛᴏɴ',
+
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Single' if settings["button"] else 'Double',
+
+                    InlineKeyboardButton('𝗦ɪɴɢʟᴇ' if settings["button"] else '𝐃𝐎𝐔𝐁𝐋𝐄',
+
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
+
                 ],
+
                 [
-                    InlineKeyboardButton('Bot PM', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["botpm"] else '❌ No',
+
+                    InlineKeyboardButton('𝗕ᴏᴛ 𝗣ᴍ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
+
+                    InlineKeyboardButton('✅ 𝗬ᴇs' if settings["botpm"] else '❌ 𝐍𝐎',
+
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
+
                 ],
+
                 [
-                    InlineKeyboardButton('File Secure',
+
+                    InlineKeyboardButton('𝗙ɪʟᴇ 𝗦ᴇᴄᴜʀᴇ',
+
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["file_secure"] else '❌ No',
+
+                    InlineKeyboardButton('✅ 𝗬ᴇs' if settings["file_secure"] else '❌ 𝐍𝐎',
+
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}')
+
                 ],
+
                 [
-                    InlineKeyboardButton('IMDB', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["imdb"] else '❌ No',
+
+                    InlineKeyboardButton('𝗜ᴍʙᴅ', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
+
+                    InlineKeyboardButton('✅ 𝗬ᴇs' if settings["imdb"] else '❌ 𝐍𝐎',
+
                                          callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}')
+
                 ],
+
                 [
-                    InlineKeyboardButton('Spell Check',
+
+                    InlineKeyboardButton('𝗦ᴘᴇʟʟ 𝗖ʜᴇᴄᴋ',
+
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["spell_check"] else '❌ No',
+
+                    InlineKeyboardButton('✅ 𝗬ᴇs' if settings["spell_check"] else '❌ 𝐍𝐎',
+
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
+
                 ],
+
                 [
-                    InlineKeyboardButton('Welcome', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["welcome"] else '❌ No',
+
+                    InlineKeyboardButton('𝗪ᴇʟᴄᴏᴍᴇ', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
+
+                    InlineKeyboardButton('✅ 𝗬ᴇs' if settings["welcome"] else '❌ 𝐍𝐎',
+
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
+
                 ]
+
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
