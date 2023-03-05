@@ -691,7 +691,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         settings = await get_settings(grpid)
 
         if settings is not None:
-            buttons = [
+       
             buttons = [
 
                 [
